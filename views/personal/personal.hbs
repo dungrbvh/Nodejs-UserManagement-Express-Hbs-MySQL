@@ -1,0 +1,92 @@
+<div class="container"> 
+  <div class="row"> 
+    <div class="col-md-4">
+        <div style="height:200px; border:1px solid #EEE; margin-top:10px;"> 
+          <h2>BODY RECORD</h2>
+          <a href="/record/addrecord/{{user_id}}" type="button" class="btn btn-primary align-self-center">自分のカラダの記録</a>
+        </div>
+    </div>
+
+
+      <div class="col-md-4">
+        <div style="height:200px; border:1px solid #EEE; margin-top:10px;"> 
+          <h2>MY DIARY</h2>
+          <a href="/diary/adddiary/{{user_id}}" type="button" class="btn btn-primary align-self-center">自分の日記</a>
+        </div>
+      </div>
+
+    <div class="col-md-4">
+      <div style="height:200px; border:1px solid #EEE; margin-top:10px;"> 
+          <h2>MY EXERCISE</h2>
+          <a href="/activity/addactivity/{{user_id}}" type="button" class="btn btn-primary align-self-center">自分の運動の記録</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table table-bordered">
+
+  <tbody>
+
+    {{#each result3}}
+    <tr>
+      <th scope="row">{{this.record_id}}</th>
+      <td>{{this.health_rate}}</td>
+      <td>{{this.weight}}</td>
+      <td>{{this.date}}</td>
+    </tr>
+    {{/each}}
+        
+  </tbody>
+</table>
+
+
+<table class="table table-striped table-dark">
+  <thead>
+    <h2>My exercise</h2>
+    <tr>
+      <th scope="col">Exercise</th>
+      <th scope="col">Duration</th>
+    </tr>
+  </thead>
+  {{#each result2}}
+  <tbody>
+    <tr>
+      <td>
+        <div style="float: left">
+          <p>{{this.activity}}</p>
+        </div>
+        <div style="float: right"> 
+          <p style="color: #">{{this.duration}}</p>
+        </div>
+        <div style="clear: both"></div>
+      </td>
+      <td>
+        <div style="float: left">
+          <p>{{this.activity}}</p>
+          <p>{{this.calories}}</p>
+        </div>
+        <div style="float: right"> 
+          <p> {{this.duration}}</p>
+        </div>
+        <div style="clear: both"></div>
+      </td>
+    </tr>
+  </tbody>
+  {{/each}}
+</table>
+
+ {{#each result1}}
+  <div class="container">
+    
+    <div class="col-md-3"> 
+      <div style="height:200px; border:1px solid #EEE; margin-top:10px;"> 
+        
+        <h4>{{this.add_date}}</h4>
+        <p>{{this.text}}</p>
+      </div>
+      
+    </div>
+  </div>
+    
+{{/each}}

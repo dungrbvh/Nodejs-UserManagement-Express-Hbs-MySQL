@@ -1,0 +1,48 @@
+
+<table class="table table-bordered">
+
+  <tbody>
+
+    {{#each result2}}
+    <tr>
+      <th scope="row">{{this.record_id}}</th>
+      <td>{{this.health_rate}}</td>
+      <td>{{this.weight}}</td>
+      <td>{{this.date}}</td>
+    </tr>
+    {{/each}}
+        
+  </tbody>
+</table>
+
+<div class="col-6 d-flex justify-content-end">
+    <a href="/diet/adddiet/{{user_id}}" type="button" class="btn btn-primary align-self-center">Morning</a>
+</div>
+<div class="col-6 d-flex justify-content-end">
+    <a href="/diet/adddiet/{{user_id}}" type="button" class="btn btn-primary align-self-center">Lunch</a>
+</div>
+<div class="col-6 d-flex justify-content-end">
+    <a href="/diet/adddiet/{{user_id}}" type="button" class="btn btn-primary align-self-center">Dinner</a>
+</div>
+<div class="col-6 d-flex justify-content-end">
+    <a href="/diet/adddiet/{{user_id}}" type="button" class="btn btn-primary align-self-center">Snack</a>
+</div>
+<table class="table table-bordered">
+
+  <tbody>
+
+{{#each result1}}
+  <div class="container">
+    
+    <div class="col-md-3"> 
+      <div style="height:200px; border:1px solid #EEE; margin-top:10px;"> 
+        <h2>{{this.food_name}}</h2>
+        <h3>{{this.type}}</h3>
+        <h5>{{this.add_date}}</h5>
+        
+      </div>
+      
+    </div>
+  </div>
+    
+{{/each}}

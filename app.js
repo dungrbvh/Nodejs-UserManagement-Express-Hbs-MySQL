@@ -25,15 +25,16 @@ const handlebars = exphbs.create({ extname: '.hbs', });
 app.engine('.hbs', handlebars.engine);
 app.set('view engine', '.hbs');
 
-// You don't need the connection here as we have it in userController
-// let connection = mysql.createConnection({
-//   host: process.env.DB_HOST,
-//   user: process.env.DB_USER,
-//   password: process.env.DB_PASS,
-//   database: process.env.DB_NAME
-// });
 
-const routes = require('./server/routes/user');
-app.use('/', routes);
+const routes = require('./server/routes');
+const {activiyRouter, dietRouter, userRouter, infoRouter,diaryRouter, personalRouter, recordRouter, mypageRouter} =routes;
+app.use('/user', userRouter);
+app.use('/diet', dietRouter);
+app.use('/activity', activiyRouter);
+app.use('/diary', diaryRouter);
+app.use('/personal', personalRouter);
+app.use('/record', recordRouter);
+app.use('/top', mypageRouter);
+app.use('/', infoRouter);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

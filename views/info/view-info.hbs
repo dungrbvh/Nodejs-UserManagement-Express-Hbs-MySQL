@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"> 
+      <div style="height:200px; border:1px solid #EEE; margin-top:10px;"> 
+        <h2>RECOMMENDED</h2>
+        <h4>オススメ</h4>
+      </div>
+    </div>
+    <div class="col-md-3"> 
+      <div style="height:200px; border:1px solid #EEE; margin-top:10px;"> 
+        <h2>RECOMMENDED</h2>
+        <h4>ダイエット</h4>
+      </div>
+    </div>
+    <div class="col-md-3"> 
+      <div style="height:200px; border:1px solid #EEE; margin-top:10px;"> 
+        <h2>RECOMMENDED</h2>
+        <h4>美術</h4>
+      </div>
+    </div>
+    <div class="col-md-3"> 
+      <div style="height:200px; border:1px solid #EEE; margin-top:10px;"> 
+        <h2>RECOMMENDED</h2>
+        <h4>健康</h4>
+      </div>
+    </div>
+  </div>
+
+  {{#each rows}}
+  <div class="container">
+    
+    <div class="col-md-3"> 
+      <div style="height:200px; border:1px solid #EEE; margin-top:10px;"> 
+        
+        <p>{{this.add_date}}</p>
+        
+      </div>
+      <p>{{this.description}}</p>
+    </div>
+  </div>
+    
+{{/each}}
